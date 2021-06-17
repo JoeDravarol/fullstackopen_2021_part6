@@ -6,7 +6,12 @@ const App = () => {
   const dispatch = useDispatch()
 
   const vote = (id) => {
-    console.log('vote', id)
+    dispatch({
+      type: 'INCREMENT_VOTES',
+      data: {
+        id
+      }
+    })
   }
 
   return (

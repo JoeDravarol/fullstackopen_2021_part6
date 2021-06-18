@@ -29,10 +29,10 @@ const AnecdoteList = () => {
   })
   const dispatch = useDispatch()
 
-  const vote = ({ content, id}) => {
-    dispatch( voteAnecdote(id) )
+  const vote = (anecdote) => {
+    dispatch( voteAnecdote(anecdote) )
 
-    dispatch( setNotification(`you voted '${content}'`) )
+    dispatch( setNotification(`you voted '${anecdote.content}'`) )
     setTimeout(() => {
       dispatch( resetNotification() )
     }, 5000)
